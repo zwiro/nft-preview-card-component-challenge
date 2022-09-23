@@ -1,0 +1,231 @@
+/***
+    The new CSS reset - version 1.7.3 (last updated 7.8.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(217, 54%, 11%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    background-color: hsl(216, 50%, 16%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 0px 46px 10px rgba(1, 2, 4, 1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    height: 36rem;
+    max-width: 22rem;
+}
+
+.header-picture {
+    border-radius: 0.5rem;
+    max-height: 18rem;
+    transition: background-color 500ms ease-in-out;
+}
+
+.header-picture .equilibrium-pic {
+    border-radius: 0.5rem;
+    max-height: 18rem;
+    width: 100%;
+}
+
+.header-picture .view-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    opacity: 0%;
+    transition: opacity 100ms ease-in-out;
+}
+
+.nft-card h1 {
+    color: hsl(0, 0%, 100%);
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.nft-card p:first-of-type {
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.nft-card div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+    flex-wrap: wrap;
+}
+
+.nft-card div p:first-of-type {
+    color: hsl(178, 100%, 50%);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.nft-card div p:first-of-type img {
+    margin-right: 0.5rem;
+}
+
+.nft-card div p:last-of-type {
+    color: hsl(215, 51%, 70%);
+    display: flex;
+    align-items: center;
+}
+
+.nft-card div p:last-of-type img {
+    margin-right: 0.5rem;
+}
+
+footer {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.25rem;
+}
+
+footer img {
+    height: 2rem;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+}
+
+footer p {
+    color: hsl(215, 51%, 70%);
+}
+
+footer a {
+    color: hsl(0, 0%, 100%);
+}
+
+
+.header-picture:hover {
+    /* background-image: url(images/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center; */
+    cursor: pointer;
+    background-color: hsl(178, 100%, 50%);
+}
+
+.header-picture .equilibrium-pic:hover {
+    opacity: 0.5;
+}
+
+.nft-card h1 span:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+footer a:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.nft-card img,
+footer img {
+    transition: transform 500ms ease-in-out;
+}
+
+.nft-card p:hover img {
+    transform: scale(1.5);
+    transform-origin: center;
+}
+
+.header-picture:hover .view-icon {
+    opacity: 1;
+}
