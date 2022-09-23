@@ -17,8 +17,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
-- Live Site URL: [Live URL](https://your-live-site-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/nft-preview-card-component-challenge-mxs02w7Fnm)
+- Live Site URL: [Live URL](https://zwiro.github.io/nft-preview-card-component-challenge/)
 
 ## My process
 
