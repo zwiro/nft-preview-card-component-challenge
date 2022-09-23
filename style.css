@@ -194,11 +194,7 @@ footer a {
     color: hsl(0, 0%, 100%);
 }
 
-
 .header-picture:hover {
-    /* background-image: url(images/icon-view.svg);
-    background-repeat: no-repeat;
-    background-position: center; */
     cursor: pointer;
     background-color: hsl(178, 100%, 50%);
 }
@@ -228,4 +224,8 @@ footer img {
 
 .header-picture:hover .view-icon {
     opacity: 1;
+}
+
+.view-icon {
+    pointer-events: none;
 }
